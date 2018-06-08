@@ -1,7 +1,7 @@
 {
   "admins": [
+    "101389736135636501407"
   ],
-  "autoreplies_enabled": true,
   "autoreplies": [
     [
       [
@@ -11,8 +11,9 @@
       "Hello world!"
     ]
   ],
-  "commands_user": [],
+  "autoreplies_enabled": true,
   "commands_enabled": true,
+  "commands_user": [],
   "conversations": {
     "CONV_ID": {
       "autoreplies_enabled": false,
@@ -21,8 +22,7 @@
     }
   },
   "link_to_guide": "https://github.com/hangoutsbot/hangoutsbot/wiki/User-Guide",
-  "mentionall":true,
-  "silentmode":false,
+  "mentionall": true,
   "mentionallwhitelist": [],
   "mentionerrors": true,
   "mentionquidproquo": false,
@@ -34,6 +34,9 @@
     "autoreply",
     "dnd",
     "starter",
-    "remind"
-  ]
+    "remind",
+    "image",
+    "whichleafisthis"
+  ],
+  "silentmode": false
 }
