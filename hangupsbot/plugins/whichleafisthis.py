@@ -23,10 +23,21 @@ def tellme(bot, event, *args):
     if 'https://lh3.googleusercontent.com/' in text: #this is uploaded image
         pic_url = text+'.jpg'        
         yield from bot.coro_send_message(event.conv,'please wait, processing...')
-        label, confidence = predict_leaf(pic_url)
-
-        yield from bot.coro_send_message(
-            event.conv,
-            _("Species: <i><b>{}</b></i> \n Confidence: <b>{}</b>%").format(
-                label,
-                confidence))
+        labels, confidences = predict_leaf(pic_url)
+        if len(labels)<1:
+            yield from bot.coro_send_message(
+                event.conv,
+                "Could not identify, please try again")
+        elif len(labels) ==1:
+            yield from bot.coro_send_message(
+                    event.conv,
+                    _("Species: <i><b>{}</b></i> \n Confidence: <b>{}</b>%").format(
+                        labels[0],
+                        confidences[0]))
+        else:
+            for (label,confidence)  in zip(labels, confidences):
+                yield from bot.coro_send_message(
+                    event.conv,
+                    _("Species: <i><b>{}</b></i> \n Confidence: <b>{}</b>%").format(
+                        label,
+                        confidence))
