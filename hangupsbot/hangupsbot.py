@@ -24,6 +24,7 @@ from commands import command
 from permamem import conversation_memory
 from utils import simple_parse_to_segments, class_from_name
 
+#JSOn file can be found here C:\Users\kkrao\AppData\Local\hangupsbot\hangupsbot
 
 gettext.install('hangupsbot', localedir=os.path.join(os.path.dirname(__file__), 'locale'))
 

@@ -42,7 +42,5 @@ def tellme(bot, event, *args):
                         label,
                         confidence))
                 if idx ==2:
-                    yield from bot.coro_send_message(
-                        event.conv,
-                        "Could not identify, please try again")
+                    break
                     
